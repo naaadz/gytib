@@ -19,7 +19,7 @@
     </ul>
     <h2>Time to interactivity</h2>
     <ul>
-      <li>This page is computationally expensive, can't press the button right away</li>
+      <li>This page has alot of dom nodes, can't press the button right away</li>
     </ul>
     <h2>Server components</h2>
     <ul>
