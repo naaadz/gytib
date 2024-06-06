@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 { @apply text-6xl; } 
+h2 { @apply text-4xl; }
+ul { @apply list-disc ml-8; }
+
+    .text-bubble {
+      @apply text-5xl text-white w-96 p-10 bg-black;
+    }
+
+      .text-bubble::after {
+        content: '';
+        position: absolute;
+        bottom: -40px;
+        right: 35px;
+        width: 0;
+        height: 0;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        border-top: 40px solid black;
+      }
+
+    .button {
+      @apply bg-green-500 text-white font-bold py-2 px-4 rounded-xl;
+    }
