@@ -3,9 +3,15 @@
     <h1>Data Fetching</h1>
     <div v-if="team" class="flex flex-col sm:flex-row gap-2">
       <!-- Example 1 - Fetch whole document -->
-      <div v-for="member in team.data.team_members.slice(0,2)" :key="member.id" class="relative basis-1/2">
-        <img :src="member.team_image.url" alt="">
-        <span class="absolute left-4 bottom-4 text-white text-xl">{{ member.team_name[0].text }}</span>
+      <div
+        v-for="member in team.data.team_members.slice(0, 2)"
+        :key="member.id"
+        class="relative basis-1/2"
+      >
+        <img :src="member.team_image.url" alt="" />
+        <span class="absolute left-4 bottom-4 text-white text-xl">{{
+          member.team_name[0].text
+        }}</span>
       </div>
 
       <!-- Example 2 - Fetch just needed items with transform -->
@@ -22,10 +28,16 @@
         />
         <span class="absolute left-4 bottom-4 text-white text-xl">{{ member.team_name[0].text }}</span>
       </div> -->
-
     </div>
     <ul>
-      <li>Cut down on in-page payload size with Transforms <a href="https://nuxt.com/docs/api/composables/use-async-data" target="_blank">useAsyncData</a></li>
+      <li>
+        Cut down on in-page payload size with Transforms
+        <a
+          href="https://nuxt.com/docs/api/composables/use-async-data"
+          target="_blank"
+          >useAsyncData</a
+        >
+      </li>
       <li>Cache the response client side</li>
       <li><a href="https://image.nuxt.com/" target="_blank">NuxtImg</a></li>
     </ul>
@@ -33,11 +45,11 @@
 </template>
 
 <script setup>
-const nuxtApp = useNuxtApp()
-const { client } = usePrismic()
+const nuxtApp = useNuxtApp();
+const {client} = usePrismic();
 
 // Example 2 - Fetch whole document
-const { data: team } = await useAsyncData('team', () => client.getSingle('team'))
+const {data: team} = await useAsyncData('team', () => client.getSingle('team'));
 
 // Example 2 - Transforms and cached data
 // const { data: team } = await useAsyncData('team', () => client.getSingle('team'), {
@@ -52,8 +64,5 @@ const extractImagePath = (url) => {
   const urlObj = new URL(url);
   const matches = urlObj.pathname.match(/\/([^?]+)/);
   return matches ? matches[0] : '';
-}
-
-
-
+};
 </script>

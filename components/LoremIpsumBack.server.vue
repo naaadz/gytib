@@ -2,7 +2,11 @@
   <div>
     <!-- Example 1 large amt of dom nodes -->
     <div v-for="i in 50">
-      <span v-for="i in 50" class="flex flex-col">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam {{ randomNumber }}</span>
+      <span v-for="i in 50" class="flex flex-col"
+        >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam {{ randomNumber }}</span
+      >
     </div>
 
     <!-- Example 2 fetch data -->
@@ -18,9 +22,9 @@
 <script setup>
 defineProps({
   number: Number
-})
+});
 
-const randomNumber = ref(Math.random())
+const randomNumber = ref(Math.random());
 
 // Example 2 - fetch data
 
@@ -32,5 +36,4 @@ const randomNumber = ref(Math.random())
 // }
 
 // await fetchPosts()
-
 </script>

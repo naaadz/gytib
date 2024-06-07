@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+h1, h2 {
+  text-wrap: balance;
+}
+
 h1 { @apply text-6xl; } 
 h2 { @apply text-4xl; }
+h3 { @apply text-2xl font-bold; }
 ul { @apply list-disc ml-8; }
 
     .text-bubble {
@@ -23,5 +28,5 @@ ul { @apply list-disc ml-8; }
       }
 
     .button {
-      @apply bg-green-500 text-white font-bold py-2 px-4 rounded-xl;
+      @apply bg-green-500 text-white font-bold p-4 rounded-xl;
     }
